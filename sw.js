@@ -3,7 +3,7 @@ const DYNAMIC_CACHE = 'dynamic-cache-v1';
 
 const APP_SHELL_ASSETS = [
   './',
-  './form.html',
+  './index.html',
   './mainmanifest.json',
   './register.js',
   './app.js',
@@ -74,10 +74,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Navegaciones: fallback a form.html si estás offline
+  // Navegaciones: fallback a index.html si estás offline
   if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(request).catch(() => caches.match('./form.html'))
+      fetch(request).catch(() => caches.match('./index.html'))
     );
     return;
   }
